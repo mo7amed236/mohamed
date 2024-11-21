@@ -1,0 +1,13 @@
+{
+  "name": "link-in-bio-page",
+  "version": "1.0.0",
+  "description": "مشروع صفحة لينك ان بايو بتصميم حديث.",
+  "main": "index.html",
+  "scripts": {
+    "start": "فتح index.html في المتصفح"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "محمد محمود",
+  "license": "ISC"
+}
