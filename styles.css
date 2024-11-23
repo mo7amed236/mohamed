@@ -1,70 +1,122 @@
+/* ملف: styles.css */
 body {
-    font-family: 'Arial', sans-serif;
-    background: #e0e0e0;
     margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background: url('background.jpg') no-repeat center center/cover; /* خلفية الصفحة */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.profile-card {
-    background: #f4f4f4;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-
-.profile-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ddd;
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 24px;
     color: #333;
-    margin-bottom: 10px;
+    overflow: hidden; /* منع التمرير */
 }
 
-p {
-    color: #666;
-    font-size: 14px;
-    margin: 10px 0 20px;
+.bio-container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.8); /* خلفية شفافة للحاوية */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.buttons {
+/* الصورة */
+.profile-pic {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover; /* تناسب الصورة */
+    margin-bottom: 15px;
+    border: 4px solid #f78ca0;
+    background-color: #f3f3f3; /* لون خلفية افتراضي في حال لم تظهر الصورة */
+    display: block;
+}
+
+/* النصوص */
+.main-name {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.sub-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    color: #34495e;
+    margin-top: 0;
+}
+
+/* الروابط */
+.links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px; /* مسافة بين الروابط */
 }
 
+/* الأزرار */
 .button {
-    background: #d9e4dd;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    text-align: center;
     text-decoration: none;
-    color: #333;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.button:hover {
-    background: #c7d6cf;
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.button i {
+    font-size: 18px;
 }
 
-.note {
-    font-size: 12px;
-    color: #999;
-    margin-top: 15px;
+/* الألوان */
+.call-button {
+    background: #28a745;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.facebook {
+    background: #1877f2;
+}
+
+.button.twitter {
+    background: #1da1f2;
+}
+
+.button.instagram {
+    background: #e4405f;
+}
+
+.button.linkedin {
+    background: #0077b5;
+}
+
+.button.saraha {
+    background: #ff9900;
+}
+
+/* تأثير التمرير */
+.animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
