@@ -16,6 +16,9 @@ body {
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط جميع المحتويات */
 }
 
 /* تنسيق الاسم */
@@ -48,16 +51,20 @@ body {
     object-fit: cover; /* تناسب الصورة */
     margin-bottom: 40px; /* مسافة أسفل الصورة */
     display: block;
-    margin: 0 auto;
+    border: 2px solid #fff; /* إطار أبيض */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* الروابط */
 .links {
     display: flex;
     flex-direction: column;
+    align-items: center; /* توسيط الأزرار */
     gap: 20px; /* المسافة بين الروابط */
+    width: 100%;
 }
 
+/* تصميم الأزرار */
 .button {
     text-decoration: none;
     font-size: 16px;
@@ -71,9 +78,8 @@ body {
     gap: 10px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    width: 80%; /* عرض الأزرار */
+    max-width: 300px; /* الحد الأقصى للعرض */
 }
 
 .button i {
