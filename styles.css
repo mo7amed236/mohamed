@@ -1,26 +1,46 @@
 /* ملف: styles.css */
 body {
     margin: 0;
-    padding: 0;
     font-family: 'Playfair Display', serif;
-    background: url('background.jpg') no-repeat center center/cover; /* صورة خلفية */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    background: url('background.jpg') no-repeat center center/cover; /* صورة الخلفية */
+    color: #000; /* لون النص */
 }
 
 .bio-container {
     text-align: center;
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.8); /* خلفية شفافة خفيفة */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* الصورة */
+/* تنسيق الاسم */
+.name-section {
+    position: relative;
+    margin-bottom: 20px; /* مسافة بين الاسم وصورة البروفايل */
+}
+
+.main-name {
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin: 0;
+    color: #2c3e50; /* لون داكن */
+}
+
+.sub-name {
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+    margin: 5px 0 0;
+    color: #34495e; /* لون أفتح قليلاً */
+}
+
+/* صورة البروفايل */
 .profile-pic {
     width: 150px; /* تصغير حجم الصورة */
     height: 150px;
@@ -65,7 +85,7 @@ body {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
 }
 
-/* الألوان */
+/* ألوان الأزرار */
 .call-button {
     background: linear-gradient(45deg, #ff0076, #ffdb4d); /* لون زاهي */
     width: 60px;
