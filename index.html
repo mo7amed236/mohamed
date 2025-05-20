@@ -3,206 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOHAMED | روابط التواصل</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mohamed | Bio Link</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@400;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #121212;
-            --neon-color: #64ffda;
-            --text-color: #fff;
-            --shadow-color: rgba(100, 255, 218, 0.3);
-            --font-family: 'Roboto Mono', monospace;
-            --button-bg: rgba(100, 255, 218, 0.1);
-            --button-hover-bg: rgba(100, 255, 218, 0.2);
-            --transition-speed: 0.3s;
-        }
-
+        /* Immediate fade-in animation for body */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow: hidden;
-            perspective: 800px;
+            animation: fadeInPage 0.8s ease-in-out forwards;
         }
-
-        .bio-container {
-            width: 100%;
-            max-width: 500px;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease-in-out;
-            position: relative;
-            z-index: 1;
-        }
-
-        .bio-container:hover {
-            transform: rotateY(10deg);
-        }
-
-        .name-section {
-            margin-bottom: 30px;
-        }
-
-        .main-name {
-            font-size: 56px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px var(--neon-color);
-            color: var(--neon-color);
-        }
-
-        .sub-name {
-            font-size: 28px;
-            font-style: italic;
-            color: var(--text-color);
-            opacity: 0.7;
-        }
-
-        .header {
-            margin-bottom: 40px;
-        }
-
-        .profile-pic {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--neon-color);
-            box-shadow: 0 0 20px var(--shadow-color);
-            transition: transform var(--transition-speed);
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.1);
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .button {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            padding: 18px 25px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 18px;
-            color: var(--text-color);
-            background-color: var(--button-bg);
-            transition: background-color var(--transition-speed), transform var(--transition-speed);
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .button i {
-            margin-left: 15px;
-            font-size: 22px;
-            color: var(--neon-color);
-            text-shadow: 0 0 5px var(--shadow-color);
-        }
-
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--neon-color);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-            transform-origin: bottom;
-        }
-
-        .button:hover::before {
-            transform: scaleY(1);
-        }
-
-        .button:hover {
-            background-color: var(--button-hover-bg);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .call-button {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            padding: 0;
-            background: var(--neon-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 20px var(--shadow-color);
-            transition: transform var(--transition-speed);
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        .call-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 30px var(--shadow-color);
-        }
-
-        .call-button i {
-            margin: 0;
-            color: var(--bg-color);
-            font-size: 28px;
-            text-shadow: none;
+        
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
     <div class="bio-container">
+        <!-- Name Section -->
         <div class="name-section">
             <h1 class="main-name">MOHAMED</h1>
             <p class="sub-name">Abu Hamza & Omar</p>
         </div>
 
+        <!-- Header Section -->
         <div class="header">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="profile-pic-container">
+                <div class="profile-pic-overlay"></div>
+                <img src="profile-placeholder.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
         </div>
 
-        <a href="tel:+201007795415" class="call-button">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-
+        <!-- Links Section -->
         <div class="links">
-            <a href="https://wa.me/201007795415" class="button whatsapp">
-                <i class="fab fa-whatsapp"></i> واتساب
+            <!-- Call Button -->
+            <a href="tel:+201007795415" class="button call-button" data-tooltip="اتصل بي">
+                <i class="fas fa-phone-alt"></i>
+                <span class="button-text">اتصل الآن</span>
             </a>
-            <a href="https://www.facebook.com/mo7amed236/" class="button facebook">
-                <i class="fab fa-facebook-f"></i> فيسبوك
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201007795415" class="button whatsapp" data-tooltip="تواصل عبر واتساب">
+                <i class="fab fa-whatsapp"></i>
+                <span class="button-text">واتساب</span>
             </a>
-            <a href="https://x.com/mo7amed236" class="button twitter">
-                <i class="fab fa-twitter"></i> تويتر (X)
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/mo7amed236/" class="button facebook" data-tooltip="تابعني على فيسبوك">
+                <i class="fab fa-facebook-f"></i>
+                <span class="button-text">فيسبوك</span>
             </a>
-            <a href="https://www.instagram.com/mo7amad236/profilecard/?igsh=MWlkbzdyNXd5cDZoYg==" class="button instagram">
-                <i class="fab fa-instagram"></i> إنستجرام
+            
+            <!-- Twitter -->
+            <a href="https://x.com/mo7amed236" class="button twitter" data-tooltip="تابعني على تويتر">
+                <i class="fab fa-twitter"></i>
+                <span class="button-text">تويتر (X)</span>
             </a>
-            <a href="https://www.linkedin.com/in/mohamed-mohamoud-406432117/" class="button linkedin">
-                <i class="fab fa-linkedin-in"></i> لينكد إن
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/mo7amad236/profilecard/?igsh=MWlkbzdyNXd5cDZoYg==" class="button instagram" data-tooltip="تابعني على انستغرام">
+                <i class="fab fa-instagram"></i>
+                <span class="button-text">انستغرام</span>
             </a>
-            <a href="https://mo7amed23699.sarhne.com/" class="button saraha">
-                <i class="fas fa-comment-alt"></i> صراحة
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/mohamed-mohamoud-406432117/" class="button linkedin" data-tooltip="تواصل معي على لينكد إن">
+                <i class="fab fa-linkedin-in"></i>
+                <span class="button-text">لينكد إن</span>
+            </a>
+            
+            <!-- Saraha -->
+            <a href="https://mo7amed23699.sarhne.com/" class="button saraha" data-tooltip="أرسل لي رسالة مجهولة">
+                <i class="fas fa-comment-alt"></i>
+                <span class="button-text">صراحة</span>
             </a>
         </div>
+        
+        <footer>
+            <p class="copyright">© <span id="year"></span> Mohamed. جميع الحقوق محفوظة</p>
+        </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
