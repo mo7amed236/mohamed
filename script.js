@@ -1,23 +1,53 @@
-// اختر جميع العناصر التي تحتوي على الحركات
-const animatedElements = document.querySelectorAll('.animated');
+document.addEventListener('DOMContentLoaded', function () {
+    // تأثير الضغط على الأزرار
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.addEventListener('mousedown', function () {
+            this.style.transform = 'scale(0.98)';
+        });
 
-// وظيفة التحقق من ظهور العناصر في نافذة العرض
-function isVisible(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
-}
+        button.addEventListener('mouseup', function () {
+            this.style.transform = '';
+        });
 
-// وظيفة إضافة الحركات للعناصر الظاهرة
-function handleScroll() {
-    animatedElements.forEach((el) => {
-        if (isVisible(el)) {
-            el.classList.add('show');
-        }
+        button.addEventListener('mouseleave', function () {
+            this.style.transform = '';
+        });
     });
-}
 
-// تشغيل الحركات عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', handleScroll);
+    // تأثير متابعة المؤشر للصورة الشخصية
+    const profilePic = document.querySelector('.profile-pic');
+    const container = document.querySelector('.bio-container');
 
-// تشغيل الحركات عند التمرير
-window.addEventListener('scroll', handleScroll);
+    container.addEventListener('mousemove', function (e) {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const moveX = (x - centerX) / 25;
+        const moveY = (y - centerY) / 25;
+
+        profilePic.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    container.addEventListener('mouseleave', function () {
+        profilePic.style.transform = 'translate(0, 0)';
+    });
+
+    // تأثير الضغط على زر الاتصال
+    const callButton = document.querySelector('.call-button');
+    callButton.addEventListener('mousedown', function () {
+        this.style.transform = 'scale(0.9)';
+    });
+
+    callButton.addEventListener('mouseup', function () {
+        this.style.transform = '';
+    });
+
+    callButton.addEventListener('mouseleave', function () {
+        this.style.transform = '';
+    });
+});
